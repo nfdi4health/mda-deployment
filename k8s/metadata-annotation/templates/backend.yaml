@@ -37,10 +37,10 @@ spec:
               secretKeyRef:
                 name: mda.{{ .Release.Name }}--postgres-cluster.credentials.postgresql.acid.zalan.do
                 key: password
-          - name: DB_HOST
-            value: {{ .Release.Name }}--postgres-cluster
           - name: API_PREDICT
             value: http://{{ .Release.Name }}-prediction:5000
+          - name: DB_HOST
+            value: { { .Release.Name } }--postgres-cluster
         ports:
           - containerPort: 5000
         volumeMounts:
