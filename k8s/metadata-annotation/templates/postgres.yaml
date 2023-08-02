@@ -5,7 +5,7 @@ metadata:
   name: {{ .Release.Name }}--postgres-cluster
   namespace: default
 spec:
-  teamId: "mda"
+  teamId: {{ .Release.Name }}
   volume:
     size: 1Gi
   numberOfInstances: 2
