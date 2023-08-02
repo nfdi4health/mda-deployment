@@ -40,7 +40,7 @@ spec:
           - name: API_PREDICT
             value: http://{{ .Release.Name }}-prediction:5000
           - name: DB_HOST
-            value: { { .Release.Name } }--postgres-cluster
+            value: {{ .Release.Name }}--postgres-cluster
         ports:
           - containerPort: 5000
         volumeMounts:
