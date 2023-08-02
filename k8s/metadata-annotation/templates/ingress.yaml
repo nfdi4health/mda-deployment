@@ -1,3 +1,4 @@
+{{- if .Values.ingress.dns }}
 {{- $relname := .Release.Name -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -16,20 +17,9 @@ spec:
   tls:
     - hosts:
         - {{ .Values.ingress.dns }}
-        - {{ .Release.Name }}.prod.km.k8s.zbmed.de
       secretName: {{ .Release.Name }}-ssl-secret
   {{ end }}
   rules:
-    - host: {{ .Release.Name }}.prod.km.k8s.zbmed.de
-      http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: {{ .Release.Name }}-frontend
-              port:
-                number: 80
     - host: {{ .Values.ingress.dns }}
       http:
         paths:
@@ -40,3 +30,4 @@ spec:
               name: {{ .Release.Name }}-frontend
               port:
                 number: 80
+{{- end }}
