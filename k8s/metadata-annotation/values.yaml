@@ -11,6 +11,6 @@ oidc:
   prediction:
     clientid:
 images:
-  backend: gitlab.zbmed.de:5050/km/nfdi4health/annotation-workbench/backend:b0a7259f163274960f9aac2c7b0544682483c685
-  frontend: gitlab.zbmed.de:5050/km/nfdi4health/annotation-workbench/frontend:b0a7259f163274960f9aac2c7b0544682483c685
+  backend: ghcr.io/nfdi4health/metadata-annotation-workbench/backend:develop
+  frontend: ghcr.io/nfdi4health/metadata-annotation-workbench/frontend:develop
   prediction: gitlab.zbmed.de:5050/km/thesis/pierre-ba/backend:a7d3254ee488a236dade40ecedc646861aff9dbe
