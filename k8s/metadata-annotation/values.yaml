@@ -1,7 +1,7 @@
 ingress:
   dns:
-  enableSSL: true
-  certIssuer: letsencrypt-prod
+  enableSSL:
+  certIssuer:
 images:
   backend: ghcr.io/nfdi4health/metadata-annotation-workbench/backend:develop
   frontend: ghcr.io/nfdi4health/metadata-annotation-workbench/frontend:develop
