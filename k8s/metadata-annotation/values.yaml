@@ -5,4 +5,4 @@ ingress:
 images:
   backend: ghcr.io/nfdi4health/metadata-annotation-workbench/backend:develop
   frontend: ghcr.io/nfdi4health/metadata-annotation-workbench/frontend:develop
-  prediction: gitlab.zbmed.de:5050/km/thesis/pierre-ba/backend:a7d3254ee488a236dade40ecedc646861aff9dbe
+  prediction: ghcr.io/nfdi4health/maelstrom-classification/backend:6b3b4495946f421da48e147783ba508b095396b4
