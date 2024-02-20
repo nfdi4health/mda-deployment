@@ -3,6 +3,16 @@ entries:
   metadata-annotation:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-02-20T10:57:57.600511554Z"
+    description: A Helm chart to deploy the metadata-annotation-workbench.
+    digest: a12057de77cafb74bd9b28675879c1f907a06d6a5ea6d9752680e938d0f99c39
+    name: metadata-annotation
+    type: application
+    urls:
+    - https://github.com/nfdi4health/mda-deployment/releases/download/metadata-annotation-0.1.8/metadata-annotation-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-02-20T10:38:06.255428053Z"
     description: A Helm chart to deploy the metadata-annotation-workbench.
     digest: 925450cfd3406f649071956f9d8f996efcce16f29c5d5ede181a9f33dd640919
@@ -71,4 +81,4 @@ entries:
     urls:
     - https://github.com/nfdi4health/mda-deployment/releases/download/metadata-annotation-0.1.1/metadata-annotation-0.1.1.tgz
     version: 0.1.1
-generated: "2024-02-20T10:38:06.255662116Z"
+generated: "2024-02-20T10:57:57.600546509Z"
