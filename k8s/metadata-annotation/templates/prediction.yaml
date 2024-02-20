@@ -16,6 +16,11 @@ spec:
         name: prediction
         ports:
           - containerPort: 5000
+        resources:
+          limits:
+            memory: 900Mi
+          requests:
+            memory: 900Mi
 ---
 apiVersion: v1
 kind: Service
