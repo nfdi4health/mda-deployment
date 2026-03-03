@@ -30,6 +30,8 @@ spec:
             value: http://{{ .Release.Name }}-backend:5000
         ports:
           - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service
