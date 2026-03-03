@@ -3,6 +3,6 @@ ingress:
   enableSSL:
   certIssuer:
 images:
-  backend: ghcr.io/nfdi4health/metadata-annotation-workbench/backend:develop
-  frontend: ghcr.io/nfdi4health/metadata-annotation-workbench/frontend:develop
-  prediction: ghcr.io/nfdi4health/maelstrom-classification/backend:6b3b4495946f421da48e147783ba508b095396b4
+  backend:
+  ui:
+  prediction:

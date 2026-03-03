@@ -1,24 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-frontend
+  name: {{ .Release.Name }}-ui
 spec:
   selector:
     matchLabels:
-      name: {{ .Release.Name }}-frontend
+      name: {{ .Release.Name }}-ui
   template:
     metadata:
       labels:
-        name: {{ .Release.Name }}-frontend
+        name: {{ .Release.Name }}-ui
+        project: nfdi4health
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/part-of: mda
+        app.kubernetes.io/component: ui
+        app.kubernetes.io/managed-by: Helm
     spec:
       containers:
-      - name: frontend
-        image: {{ .Values.images.frontend }}
+      - name: ui
+        image: {{ .Values.images.ui }}
         resources:
           limits:
-            memory: 500Mi
+            memory: 128Mi
           requests:
-            memory: 100Mi
+            memory: 64Mi
+            cpu: 25m
         env:
           - name: API_PASS
             value: http://{{ .Release.Name }}-backend:5000
@@ -28,11 +34,17 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-frontend
+  name: {{ .Release.Name }}-ui
+  labels:
+    project: nfdi4health
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/part-of: mda
+    app.kubernetes.io/component: ui
+    app.kubernetes.io/managed-by: Helm
 spec:
   ports:
     - name: "80"
       port: 80
       targetPort: 80
   selector:
-    name: {{ .Release.Name }}-frontend
+    name: {{ .Release.Name }}-ui

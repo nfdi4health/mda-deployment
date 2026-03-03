@@ -10,6 +10,11 @@ spec:
     metadata:
       labels:
         name: {{ .Release.Name }}-prediction
+        project: nfdi4health
+        app.kubernetes.io/instance: {{ .Release.Name }}
+        app.kubernetes.io/part-of: mda
+        app.kubernetes.io/component: prediction
+        app.kubernetes.io/managed-by: Helm
     spec:
       containers:
       - image: {{ .Values.images.prediction }}
@@ -18,14 +23,21 @@ spec:
           - containerPort: 5000
         resources:
           limits:
-            memory: 1100Mi
+            memory: 1500Mi
           requests:
-            memory: 1100Mi
+            memory: 1000Mi
+            cpu: 250m
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}-prediction
+  labels:
+    project: nfdi4health
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/part-of: mda
+    app.kubernetes.io/component: prediction
+    app.kubernetes.io/managed-by: Helm
 spec:
   ports:
     - name: "5000"

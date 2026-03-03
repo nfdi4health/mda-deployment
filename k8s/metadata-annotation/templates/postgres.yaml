@@ -3,7 +3,12 @@ apiVersion: "acid.zalan.do/v1"
 kind: postgresql
 metadata:
   name: {{ .Release.Name }}--postgres-cluster
-  namespace: default
+  labels:
+    project: nfdi4health
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/part-of: mda
+    app.kubernetes.io/component: database
+    app.kubernetes.io/managed-by: Helm
 spec:
   teamId: {{ .Release.Name }}
   volume:
@@ -17,4 +22,10 @@ spec:
     mda: mda  # dbname: owner
   postgresql:
     version: "14"
+  resources:
+    requests:
+      cpu: 150m
+      memory: 384Mi
+    limits:
+      memory: 768Mi
 ---
