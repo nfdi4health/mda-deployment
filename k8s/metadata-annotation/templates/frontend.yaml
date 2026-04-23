@@ -21,10 +21,9 @@ spec:
         image: {{ .Values.images.ui }}
         resources:
           limits:
-            memory: 128Mi
+            memory: 500Mi
           requests:
-            memory: 64Mi
-            cpu: 25m
+            memory: 100Mi
         env:
           - name: API_PASS
             value: http://{{ .Release.Name }}-backend:5000
